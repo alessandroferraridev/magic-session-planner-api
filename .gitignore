@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+*.log
+*.pem
+*.key
+
+# Local database volumes
+.data/
+pgdata/
+
+# Operating system files
+.DS_Store
+Thumbs.db
