@@ -4,7 +4,7 @@ NestJS API for managing Magic: The Gathering venues, scheduled sessions, nearby 
 
 ## Planned stack
 
-NestJS and TypeScript, PostgreSQL with PostGIS, TypeORM migrations, REST with OpenAPI, and a managed authentication provider. Session participation changes use database transactions to prevent overbooking.
+NestJS and TypeScript, PostgreSQL with PostGIS, TypeORM migrations, and REST with OpenAPI. Authentication will support email magic links, Google, and Apple; the provider remains undecided. Seat requests require host approval. At session creation, the host chooses whether to play, which is the default, or only provide the table without occupying a seat. Session participation changes use database transactions to prevent overbooking.
 
 ## Development plan
 
