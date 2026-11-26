@@ -4,10 +4,12 @@ NestJS API for managing Magic: The Gathering venues, scheduled sessions, nearby 
 
 ## Planned stack
 
-NestJS and TypeScript, PostgreSQL with PostGIS, TypeORM migrations, and REST with OpenAPI. Authentication will support email magic links, Google, and Apple; the provider remains undecided. Seat requests require host approval. At session creation, the host chooses whether to play, which is the default, or only provide the table without occupying a seat. Session participation changes use database transactions to prevent overbooking.
+NestJS and TypeScript, PostgreSQL with PostGIS, TypeORM migrations, and REST with OpenAPI. Authentication uses Google and Apple only, integrated directly with NestJS-owned users and sessions; explicit linking and immediate revocation follow the shared authentication specification. The audience is 18+ by self-declaration. Deploy to Vercel Hobby with Neon Free PostgreSQL/PostGIS; use Workflow/Nest and Expo push for durable notifications without polling. Discovery is city-only and exact location is restricted to hosts/approved participants. Seat requests require host approval. At session creation, the host chooses whether to play, which is the default, or only provide the table without occupying a seat. Session participation changes use database transactions to prevent overbooking.
 
 ## Development plan
 
 Start with the [shared development plan](../magic-session-planner-docs/README.md), then follow the [development roadmap](../magic-session-planner-docs/development-roadmap.md). The documentation is maintained in the separate `magic-session-planner-docs` repository. Clone it alongside this repository to use these relative links locally.
 
-This repository has been initialized on `main`. Framework setup, dependency installation, and application code are planned for roadmap step 1; there are no run or build commands yet.
+Use feature branches from the protected default `dev` branch and pull requests; `main` contains release milestones. Framework setup, dependency installation, and application code are planned for roadmap step 1; there are no run or build commands yet.
+
+See the [accepted authentication policy](../magic-session-planner-docs/authentication-decisions.md), [operating/retention policy](../magic-session-planner-docs/operational-proposal.md), and [decision audit](../magic-session-planner-docs/decision-audit.md). Only the initial format catalogue remains open. Unit, integration and E2E suites are required from scaffolding; none exists yet.
